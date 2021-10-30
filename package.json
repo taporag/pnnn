@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  },
+  "scripts": {
+    "server:dev": "yarn workspace @pnnn/server start:dev",
+    "client:dev": "yarn workspace @pnnn/client dev",
+    "dev": "concurrently \"yarn server:dev\" \"yarn client:dev\"",
+    "server:build": "yarn workspace @pnnn/server build",
+    "client:build": "yarn workspace @pnnn/client build",
+    "build": "concurrently \"yarn server:build\" \"yarn client:build\"",
+    "server:start": "yarn workspace @pnnn/server start:prod",
+    "client:start": "yarn workspace @pnnn/client start",
+    "start": "concurrently \"yarn server:start\" \"yarn client:start\"",
+    "server:lint": "yarn workspace @pnnn/server lint",
+    "client:lint": "yarn workspace @pnnn/client lint",
+    "lint": "concurrently \"yarn server:lint\" \"yarn client:lint\"",
+    "server:format": "yarn workspace @pnnn/server format",
+    "client:format": "yarn workspace @pnnn/client format",
+    "format": "concurrently \"yarn server:format\" \"yarn client:format\"",
+    "server:test": "yarn workspace @pnnn/server test",
+    "client:test": "yarn workspace @pnnn/client test",
+    "test": "concurrently \"yarn server:test\" \"yarn client:test\"",
+    "server:test:watch": "yarn workspace @pnnn/server test:watch",
+    "client:test:watch": "yarn workspace @pnnn/client test:watch",
+    "test:watch": "concurrently \"yarn server:test:watch\" \"yarn client:test:watch\"",
+    "server:test:cov": "yarn workspace @pnnn/server test:cov",
+    "client:test:cov": "yarn workspace @pnnn/client test:cov",
+    "test:cov": "concurrently \"yarn server:test:cov\" \"yarn client:test:cov\"",
+    "typeorm": "yarn workspace @pnnn/server typeorm"
+  },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33"
+  }
+}
